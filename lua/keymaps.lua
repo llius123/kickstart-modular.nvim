@@ -46,3 +46,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Ctr + s -> save file
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR><Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>a<Esc>', { noremap = true, silent = true })
+
+-- Zen mode
+vim.keymap.set('n', '<leader>zo', ':TwilightEnable<CR>', { desc = 'Zen mode ON' })
+vim.keymap.set('n', '<leader>zf', ':TwilightDisable<CR>', { desc = 'Zen mode OFF' })

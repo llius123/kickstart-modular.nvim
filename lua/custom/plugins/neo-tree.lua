@@ -11,14 +11,25 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    {
+      '<leader>e',
+      function()
+        require('neo-tree.command').execute { toggle = true, reveal = true }
+      end,
+      desc = 'Toggle NeoTree and reveal current file',
+      silent = true,
+    },
   },
   opts = {
     filesystem = {
       window = {
-        mappings = {
-          ['\\'] = 'close_window',
-        },
+        position = 'right',
+      },
+    },
+    event_handlers = {
+      {
+        event = 'vim_buffer_enter',
+        handler = function(arg) end,
       },
     },
   },
