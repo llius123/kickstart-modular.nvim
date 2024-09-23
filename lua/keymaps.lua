@@ -54,3 +54,11 @@ vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>a<Esc>', { noremap = true, sil
 -- Zen mode
 vim.keymap.set('n', '<leader>zo', ':TwilightEnable<CR>', { desc = 'Zen mode ON' })
 vim.keymap.set('n', '<leader>zf', ':TwilightDisable<CR>', { desc = 'Zen mode OFF' })
+
+-- Window management
+-- Vertical split
+vim.api.nvim_set_keymap('n', '<leader>swv', ':vsplit<CR>', { noremap = true, silent = true })
+-- Horizontal split
+vim.api.nvim_set_keymap('n', '<leader>swh', ':split<CR>', { noremap = true, silent = true })
+-- Close window
+vim.api.nvim_set_keymap('n', '<leader>wc', ':close<CR>', { noremap = true, silent = true })

@@ -6,6 +6,9 @@
 return {
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
+    -- config = function()
+    --   require('lualine-ext').init_tab_blame()
+    -- end,
     opts = {
       signs = {
         add = { text = '+' },
