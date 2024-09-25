@@ -62,6 +62,3 @@ vim.api.nvim_set_keymap('n', '<leader>swv', ':vsplit<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<leader>swh', ':split<CR>', { noremap = true, silent = true })
 -- Close window
 vim.api.nvim_set_keymap('n', '<leader>wc', ':close<CR>', { noremap = true, silent = true })
-
--- Terminal
-vim.keymap.set('n', '<leader>ts', ':ToggleTerm<CR>', { desc = 'Terminal: Open' })
