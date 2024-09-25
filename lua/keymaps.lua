@@ -57,11 +57,11 @@ vim.keymap.set('n', '<leader>zf', ':TwilightDisable<CR>', { desc = 'Zen mode OFF
 
 -- Window management
 -- Vertical split
-vim.api.nvim_set_keymap('n', '<leader>swv', ':vsplit<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>swv', ':vsplit<CR>', { noremap = true, silent = true, desc = 'Window: Vertical split' })
 -- Horizontal split
-vim.api.nvim_set_keymap('n', '<leader>swh', ':split<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>swh', ':split<CR>', { noremap = true, silent = true, desc = 'Window: Horizontal split' })
 -- Close window
-vim.api.nvim_set_keymap('n', '<leader>wc', ':close<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>wc', ':close<CR>', { noremap = true, silent = true, desc = 'Window: Vertical split' })
 
 -- Indent
 -- Colors are applied automatically based on user-defined highlight groups.

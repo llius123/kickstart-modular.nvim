@@ -64,3 +64,6 @@ vim.opt.scrolloff = 10
 
 -- Relative numbers
 vim.wo.relativenumber = true
+
+-- Show cursor column
+vim.cmd 'set cursorcolumn'
