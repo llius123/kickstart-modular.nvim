@@ -62,3 +62,17 @@ vim.api.nvim_set_keymap('n', '<leader>swv', ':vsplit<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<leader>swh', ':split<CR>', { noremap = true, silent = true })
 -- Close window
 vim.api.nvim_set_keymap('n', '<leader>wc', ':close<CR>', { noremap = true, silent = true })
+
+-- Indent
+-- Colors are applied automatically based on user-defined highlight groups.
+-- There is no default value.
+vim.cmd.highlight 'IndentLine guifg=#123456'
+-- Current indent line highlight
+vim.cmd.highlight 'IndentLineCurrent guifg=#123456'
+
+-- move lines like vscode
+vim.keymap.set('n', '<c-j>', ':m .+1<CR>==', { noremap = true, silent = true, desc = 'Move line dow' })
+vim.keymap.set('n', '<c-k>', ':m .-2<CR>==', { noremap = true, silent = true, desc = 'Move line up' })
+
+-- Open a telescope window to show all the projects
+vim.keymap.set('n', '<leader>pm', ':Telescope neovim-project discover<CR>', { noremap = true, silent = true, desc = 'Move line dow' })

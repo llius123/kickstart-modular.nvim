@@ -1,9 +1,14 @@
-return {
-  { -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
-    main = 'ibl',
-    opts = {},
-  },
+return { -- Add indentation guides even on blank lines
+  'echasnovski/mini.indentscope',
+  version = '*',
+  config = function()
+    require('mini.indentscope').setup {
+      draw = {
+        animation = function()
+          return 1
+        end,
+      },
+      symbol = '│',
+    }
+  end,
 }
