@@ -1,6 +1,5 @@
 return {
-  'mvllow/modes.nvim',
-  config = function()
-    require('modes').setup()
-  end,
+  'moyiz/command-and-cursor.nvim',
+  event = 'VeryLazy',
+  opts = {},
 }
