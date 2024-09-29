@@ -105,5 +105,15 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-- Hide nvim default first start
+-- Keep netrw, but disable its directory listing
+
+-- Open telescope at the begining
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    require('telescope.builtin').find_files {
+      cwd = vim.fn.expand '%:p:h', -- Start in the current folder
+      file_ignore_patterns = { 'node_modules' },
+    }
+  end,
+})

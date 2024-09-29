@@ -71,8 +71,16 @@ vim.cmd.highlight 'IndentLine guifg=#123456'
 vim.cmd.highlight 'IndentLineCurrent guifg=#123456'
 
 -- move lines like vscode
-vim.keymap.set('n', '<c-j>', ':m .+1<CR>==', { noremap = true, silent = true, desc = 'Move line dow' })
-vim.keymap.set('n', '<c-k>', ':m .-2<CR>==', { noremap = true, silent = true, desc = 'Move line up' })
+vim.keymap.set({ 'n', 'v' }, '<c-j>', ':m .+1<CR>==', { noremap = true, silent = true, desc = 'Move line dow' })
+vim.keymap.set({ 'n', 'v' }, '<c-k>', ':m .-2<CR>==', { noremap = true, silent = true, desc = 'Move line up' })
 
 -- Open a telescope window to show all the projects
 vim.keymap.set('n', '<leader>pm', ':Telescope neovim-project discover<CR>', { noremap = true, silent = true, desc = 'Move line dow' })
+
+-- Move to line beginning and end
+vim.keymap.set({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' })
+vim.keymap.set({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Beginning of line' })
+
+-- Disable autocomment when new line
+vim.cmd 'autocmd BufEnter * set formatoptions-=cro'
+vim.cmd 'autocmd BufEnter * setlocal formatoptions-=cro'
